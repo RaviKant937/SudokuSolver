@@ -56,13 +56,6 @@ public:
 bool issolved = false;
 //is it safe to place a number at a given position
 bool sudokuhelper(vector<vector<ll>> &vect, ll row, ll col, ll value) {
-	// fo(i,9){
-	//     fo(j,9){
-	//         cout<<vect[i][j]<<" ";
-	//     }
-	//     cout<<endl;
-	// }
-	// cout<<"\n";
 	fo(i, 9) {
 		if (vect[row][i] == value || vect[i][col] == value) {
 			return false;
@@ -108,7 +101,7 @@ void sudokusolver(vector<vector<ll>> &vect, ll row, ll col) {
 		if (sudokuhelper(vect, row, col, i + 1)) {
 			vect[row][col] = i + 1;
 			sudokusolver(vect, row, col + 1);
-			vect[row][col] = 0;
+			vect[row][col] = 0;//Backtracking Step
 			if (issolved) {
 				return;
 			}
