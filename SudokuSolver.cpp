@@ -80,11 +80,12 @@ bool sudokuhelper(vector<vector<ll>> &vect, ll row, ll col, ll value) {
 }
 void sudokusolver(vector<vector<ll>> &vect, ll row, ll col) {
 	if (row == 8 and col == 9) {
+		//printing final sudoku
 		fo(i, 9) {
 			fo(j, 9) {
 				cout << vect[i][j] << " ";
 			}
-// 			cout << endl;
+			cout << endl;
 		}
 		issolved = true;
 		return ;
@@ -127,6 +128,7 @@ void solve() {
 	sudokusolver(vect, 0, 0);
 	return ;
 }
+//it is final that only one solution exist
 int main() {
 	fastio
 #ifdef local
